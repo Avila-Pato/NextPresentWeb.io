@@ -26,16 +26,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+        <Suspense fallback={<Loader />}>
     <ClerkProvider>
       <html lang="en">
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <Suspense fallback={<Loader />}>
             {children}
-          </Suspense>
         </body>
       </html>
     </ClerkProvider>
+          </Suspense>
   );
 }

@@ -4,11 +4,12 @@ import Image from "next/image";
 import { SignInButton, SignUpButton } from "@clerk/nextjs";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import {  useState } from "react";
+
 
 export default function Home() {
-  const [loadingSignIn, setLoadingSignIn] = useState(false); 
-  const [loadingSignUp, setLoadingSignUp] = useState(false); 
+  const [loadingSignIn, setLoadingSignIn] = useState(false);
+  const [loadingSignUp, setLoadingSignUp] = useState(false);
 
   // Función para cargar datos en "Iniciar sesión"
   function loadSignInData() {
@@ -33,12 +34,15 @@ export default function Home() {
       {/* Lado izquierdo con la imagen de fondo */}
       <div className="relative col-span-2 h-screen ">
         <Image
-          src="/background.jpg"
+          src="/backGround.webp"
           alt="Background Image"
           layout="fill"
           objectFit="cover"
+          priority
           objectPosition="center"
           className="absolute inset-0"
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAAAAAAAAAAAAAQIDAAECAwQFBAMCBwQDAwQFBwQGAAAAAQIDAAEFBgcHAAEAAAABAwQFBgcJAAEAAAABAwcGBwgMAAEAAAABAwYFBwwPAAEAAAABQ8P8wAAL0Wkt9nAAA="
         />
       </div>
 
