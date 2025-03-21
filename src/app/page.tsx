@@ -1,103 +1,61 @@
+import Link from "next/link";
 import Image from "next/image";
+import { SignInButton, SignUpButton } from "@clerk/nextjs";
+import { ExternalLink } from "lucide-react"
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className="grid grid-cols-3 min-h-screen">
+      {/* Lado izquierdo con la imagen de fondo */}
+      <div className="relative col-span-2 h-screen ">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+          src="/background.jpg"
+          alt="Background Image"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          className="absolute inset-0"
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Lado derecho con contenido */}
+      <div className="flex flex-col items-center justify-center p-8 sm:p-20 bg-hero">
+        <div className="bg-blue-900 p-4 rounded-lg">
+          <h1 className="text-4xl font-bold text-center mb-4 text-white">
+            Welcome to BookWill.io
+          </h1>
+
+          {/* Botón de Iniciar Sesión */}
+          <SignInButton fallbackRedirectUrl="/dashboard">
+            <Button className="text-white font-medium bg-[#0066dc] p-2 rounded-lg flex items-center justify-center hover:bg-[#0050b3] w-full transition-all ease-in-out duration-200 hover:scale-105 hover:opacity-80 text-md">
+               Iniciar sesión 
+               < ExternalLink size={100} />
+            </Button>
+          </SignInButton>
+
+          {/* Botón de Registrarse */}
+          <div className="pt-3">
+            <SignUpButton >
+              <Button className="text-white font-medium bg-[#0066dc] p-2 rounded-lg flex items-center justify-center hover:bg-[#0050b3] w-full transition-all ease-in-out duration-200 hover:scale-105 hover:opacity-80 text-md">
+                Registrarse 
+                < ExternalLink/>
+              </Button>
+            </SignUpButton>
+          </div>
+
+          {/* Enlace a GitHub */}
+          <div className="pt-3">
+            <Link
+              href="https://github.com/Avila-Pato/Nextjs-Auth_Neon_Drizlle_PosgreSQL"
+              target="_blank"
+              className="text-white bg-[#0066dc] font-medium p-2 rounded-lg flex items-center justify-center hover:bg-[#0050b3] transition-all ease-in-out duration-200 hover:scale-105 hover:opacity-80 "
+            >
+              Github Code < ExternalLink size={30} className="pl-3"/>
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
   );
 }
