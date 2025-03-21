@@ -1,10 +1,33 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { SignInButton, SignUpButton } from "@clerk/nextjs";
-import { ExternalLink } from "lucide-react"
+import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 export default function Home() {
+  const [loadingSignIn, setLoadingSignIn] = useState(false); 
+  const [loadingSignUp, setLoadingSignUp] = useState(false); 
+
+  // Función para cargar datos en "Iniciar sesión"
+  function loadSignInData() {
+    setLoadingSignIn(true);
+
+    setTimeout(() => {
+      setLoadingSignIn(false);
+    }, 3000);
+  }
+
+  // Función para cargar datos en "Registrarse"
+  function loadSignUpData() {
+    setLoadingSignUp(true);
+
+    setTimeout(() => {
+      setLoadingSignUp(false);
+    }, 3000);
+  }
+
   return (
     <div className="grid grid-cols-3 min-h-screen">
       {/* Lado izquierdo con la imagen de fondo */}
@@ -28,18 +51,30 @@ export default function Home() {
 
           {/* Botón de Iniciar Sesión */}
           <SignInButton fallbackRedirectUrl="/dashboard">
-            <Button className="text-white font-medium bg-[#0066dc] p-2 rounded-lg flex items-center justify-center hover:bg-[#0050b3] w-full transition-all ease-in-out duration-200 hover:scale-105 hover:opacity-80 text-md">
-               Iniciar sesión 
-               < ExternalLink size={100} />
+            <Button
+              onClick={loadSignInData}
+              disabled={loadingSignIn}
+              className="font-medium bg-[#0066dc] p-2 rounded-lg flex items-center justify-center hover:bg-[#0050b3] w-full transition-all ease-in-out duration-200 hover:scale-105 hover:opacity-80 text-md"
+            >
+              <span className="oneSpan">
+                {loadingSignIn ? "Cargando..." : "Iniciar Sesión"}
+              </span>
+              <ExternalLink size={100} />
             </Button>
           </SignInButton>
 
           {/* Botón de Registrarse */}
           <div className="pt-3">
-            <SignUpButton >
-              <Button className="text-white font-medium bg-[#0066dc] p-2 rounded-lg flex items-center justify-center hover:bg-[#0050b3] w-full transition-all ease-in-out duration-200 hover:scale-105 hover:opacity-80 text-md">
-                Registrarse 
-                < ExternalLink/>
+            <SignUpButton>
+              <Button
+                onClick={loadSignUpData}
+                disabled={loadingSignUp}
+                className="text-white font-medium bg-[#0066dc] p-2 rounded-lg flex items-center justify-center hover:bg-[#0050b3] w-full transition-all ease-in-out duration-200 hover:scale-105 hover:opacity-80 text-md"
+              >
+                <span className="twoSpan">
+                  {loadingSignUp ? "Cargando..." : "Registrarse"}
+                </span>
+                <ExternalLink />
               </Button>
             </SignUpButton>
           </div>
@@ -47,11 +82,12 @@ export default function Home() {
           {/* Enlace a GitHub */}
           <div className="pt-3">
             <Link
-              href="https://github.com/Avila-Pato/Nextjs-Auth_Neon_Drizlle_PosgreSQL"
+              href="https://github.com/Avila-Pato/NextBookWild.io"
               target="_blank"
+              rel="noopener noreferrer"
               className="text-white bg-[#0066dc] font-medium p-2 rounded-lg flex items-center justify-center hover:bg-[#0050b3] transition-all ease-in-out duration-200 hover:scale-105 hover:opacity-80 "
             >
-              Github Code < ExternalLink size={30} className="pl-3"/>
+              Github Code <ExternalLink size={30} className="pl-3" />
             </Link>
           </div>
         </div>
