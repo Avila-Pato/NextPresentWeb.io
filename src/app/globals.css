@@ -1,11 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
-
-
 :root {
-  --bg-hero: url('https://beta.jsmastery.pro/assets/general/images/jsm-abstract.webp');
+  --bg-hero: url("https://beta.jsmastery.pro/assets/general/images/jsm-abstract.webp");
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
@@ -46,16 +43,12 @@
   background-position: center;
 }
 
-
-
-
 /* Loading Componente */
-.oneSpan{
+.oneSpan {
   color: white;
-
 }
 
-.twoSpan{
+.twoSpan {
   color: white;
 }
 
@@ -195,14 +188,14 @@
 /* FUENTES */
 @layer base {
   @font-face {
-    font-family: 'Nunito';
-    src: url('/assets/fonts/Nunito_variables.ttf') format('truetype');
+    font-family: "Nunito";
+    src: url("/assets/fonts/Nunito_variables.ttf") format("truetype");
     font-weight: 100 900; /* Soporta pesos variables */
     font-style: normal;
   }
 
   :root {
-    --font-nunito: 'Nunito', sans-serif;
+    --font-nunito: "Nunito", sans-serif;
   }
 }
 
@@ -211,3 +204,37 @@
     font-family: var(--font-nunito);
   }
 }
+
+/* tabla de contenido del lado derecho  */
+
+/* Ajustar el margen derecho del main para evitar solapamiento */
+main {
+  margin-right: 20rem; /* Ajusta según el ancho de tu TableOfContents */
+}
+
+/* Estilos para la barra de contenidos */
+/* aside {
+  max-height: calc(100vh - 5rem);
+  overflow-y: auto;
+} */
+/* 
+/* En tu archivo global.css 
+h2[id]::before {
+  content: '';
+  display: block;
+  height: 80px; 
+  margin-top: -80px; 
+  visibility: hidden;
+  pointer-events: none;
+}
+
+h1[id]::before {
+  content: '';
+  display: block;
+  height: 20px; 
+  margin-top: -30px; 
+  visibility: hidden;
+  pointer-events: none;
+} 
+
+*/

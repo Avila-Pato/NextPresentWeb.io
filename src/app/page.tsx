@@ -1,15 +1,16 @@
 "use client";
+
+import { SignInButton } from "@clerk/nextjs";
+import { useState } from 'react';
 import Link from "next/link";
-import Image from "next/image";
-import { SignInButton, SignUpButton } from "@clerk/nextjs";
-import { ExternalLink } from "lucide-react";
+
+import Image from 'next/image';
+import imageHero from '../../public/imageHero.png'; // Importa la imagen
 import { Button } from "@/components/ui/button";
-import {  useState } from "react";
 
-
-export default function Home() {
+function App() {
   const [loadingSignIn, setLoadingSignIn] = useState(false);
-  const [loadingSignUp, setLoadingSignUp] = useState(false);
+  // const [loadingSignUp, setLoadingSignUp] = useState(false);
 
   // Función para cargar datos en "Iniciar sesión"
   function loadSignInData() {
@@ -21,81 +22,68 @@ export default function Home() {
   }
 
   // Función para cargar datos en "Registrarse"
-  function loadSignUpData() {
-    setLoadingSignUp(true);
+  // function loadSignUpData() {
+  //   setLoadingSignUp(true);
 
-    setTimeout(() => {
-      setLoadingSignUp(false);
-    }, 3000);
-  }
+  //   setTimeout(() => {
+  //     setLoadingSignUp(false);
+  //   }, 3000);
+  // }
 
   return (
-    <div className="grid grid-cols-3 min-h-screen">
-      {/* Lado izquierdo con la imagen de fondo */}
-      <div className="relative col-span-2 h-screen ">
-        <Image
-          src="/backGround.webp"
-          alt="Background Image"
-          layout="fill"
-          objectFit="cover"
-          priority
-          objectPosition="center"
-          className="absolute inset-0"
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAAAAAAAAAAAAAQIDAAECAwQFBAMCBwQDAwQFBwQGAAAAAQIDAAEFBgcHAAEAAAABAwQFBgcJAAEAAAABAwcGBwgMAAEAAAABAwYFBwwPAAEAAAABQ8P8wAAL0Wkt9nAAA="
-        />
-      </div>
-
-      {/* Lado derecho con contenido */}
-      <div className="flex flex-col items-center justify-center p-8 sm:p-20 bg-hero">
-        <div className="bg-blue-900 p-4 rounded-lg">
-          <h1 className="text-4xl font-bold text-center mb-4 text-white">
-            Welcome to BookWill.io
+    <div className="min-h-screen w-full flex flex-col justify-center  bg-[#2d2e47] text-gray-900 bg-hero">
+      {/* Navbar */}
+      {/* Main content */}
+      <main className="flex-grow flex flex-col md:flex-row translate-x-24   items-center justify-between text-center p-5">
+        {/* Contenido a la izquierda */}
+        <div className="flex flex-col items-center md:items-start max-w-lg mx-auto text-white">
+          <h6 className="text-blue-600 font-semibold ml-0 md:ml-32"> 😎 Simple way To Communicate</h6>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mt-2">
+            Gestiona de forma rápida y sencilla
           </h1>
-
-          {/* Botón de Iniciar Sesión */}
-          <SignInButton fallbackRedirectUrl="/dashboard">
-            <Button
-              onClick={loadSignInData}
-              disabled={loadingSignIn}
-              className="font-medium bg-[#0066dc] p-2 rounded-lg flex items-center justify-center hover:bg-[#0050b3] w-full transition-all ease-in-out duration-200 hover:scale-105 hover:opacity-80 text-md"
-            >
-              <span className="oneSpan">
-                {loadingSignIn ? "Cargando..." : "Iniciar Sesión"}
-              </span>
-              <ExternalLink size={100} />
-            </Button>
-          </SignInButton>
-
-          {/* Botón de Registrarse */}
-          <div className="pt-3">
-            <SignUpButton>
-              <Button
-                onClick={loadSignUpData}
-                disabled={loadingSignUp}
-                className="text-white font-medium bg-[#0066dc] p-2 rounded-lg flex items-center justify-center hover:bg-[#0050b3] w-full transition-all ease-in-out duration-200 hover:scale-105 hover:opacity-80 text-md"
-              >
-                <span className="twoSpan">
-                  {loadingSignUp ? "Cargando..." : "Registrarse"}
-                </span>
-                <ExternalLink />
+          <p className="text-lg mt-5 px-4 md:px-0">
+            Accede a reportes, estadísticas y controla toda tu información desde un solo lugar.
+          </p>
+          <div className="mt-10 flex flex-col justify-center md:flex-row md:space-x-4">
+            <SignInButton fallbackRedirectUrl="/dashboard">
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-200 cursor-pointer"
+                onClick={loadSignInData}>
+                {loadingSignIn ? ' Cargando...' : 'Ver demo'}
               </Button>
-            </SignUpButton>
-          </div>
+            </SignInButton>
 
-          {/* Enlace a GitHub */}
-          <div className="pt-3">
+            <Button>
             <Link
-              href="https://github.com/Avila-Pato/NextBookWild.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white bg-[#0066dc] font-medium p-2 rounded-lg flex items-center justify-center hover:bg-[#0050b3] transition-all ease-in-out duration-200 hover:scale-105 hover:opacity-80 "
-            >
-              Github Code <ExternalLink size={30} className="pl-3" />
+             className="text-blue-600 underline  md:mt-0 hover:text-blue-800 transition duration-200 font-semibold"
+             href="https://github.com/Avila-Pato/NextBookWild.io"
+             target="_blank">
+              ver codigo fuente
             </Link>
+          </Button>
           </div>
+          {/* Link a la derecha */}
+          {/* <div className='flex space-x-5 mt-4'>
+            <a href="#" className="text-gray-600 hover:text-blue-800 transition duration-200">✅ No credit Card </a>
+            <a href="#" className="text-gray-600 hover:text-blue-800 transition duration-200"> ✅ No software to install </a>
+          </div> */}
         </div>
-      </div>
+
+        {/* Imagen a la derecha */}
+        <div className="relative w-full md:w-1/2 mt-5 md:mt-0">
+          <Image
+            src={imageHero}
+            alt="Descripción de la imagen"
+            className="object-cover w-full h-full rounded-lg shadow-lg transition-transform duration-300"
+          />
+        </div>
+      </main>
+
+      {/* Footer */}
+      {/* <footer className="text-center p-5 text-sm bg-gray-100 text-gray-900">
+        <p>No credit card required · No software to install</p>
+      </footer> */}
     </div>
   );
 }
+
+export default App;

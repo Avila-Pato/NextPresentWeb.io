@@ -2,28 +2,54 @@ import Link from "next/link";
 
 const Sidebar = () => {
   return (
-    <aside className="w-52 h-full bg-[#e6e7ee] p-4 font-bold text-gray-800">
+    <aside className="w-52 h-full bg-[#e6e7ee] p-4 font-bold text-gray-800 ">
       <ul className="space-y-2">
+        <li className="text-neutral-600 font-light text-xs">Documentos</li>
         <li>
-          <Link href="/dashboard" className="block p-2 hover:bg-gray-700 rounded">
+          <Link href="/dashboard" className="block p-2 hover:bg-gray-400 rounded ">
             Dashboard
           </Link>
         </li>
-        <li>
-          <Link href="/dashboard/productos/1" className="block p-2 hover:bg-gray-700 rounded">
-            Producto 1
+        <Link href="/dashboard/introduccion" className="block p-2 hover:bg-gray-400 rounded">
+            Introduccion
           </Link>
-        </li>
-        <li>
-          <Link href="/dashboard/productos/2" className="block p-2 hover:bg-gray-700 rounded">
-            Producto 2
+            
+          {/* de esta manera se manejan las rutas por props */}
+          {/* <li>
+          <Link href="/dashboard/productos/1" className="block p-2 hover:bg-gray-400 rounded">
+          Productos
           </Link>
-        </li>
-        <li>
-          <Link href="/dashboard/productos/3" className="block p-2 hover:bg-gray-700 rounded">
-            Producto 3
+          */}
+
+          <li>
+          <Link href="/dashboard/productos" className="block p-2 hover:bg-gray-400 rounded">
+            Productos
           </Link>
-        </li>
+            </li>
+              <li className="text-neutral-600 font-light text-xs">Layouts</li>
+            <li>
+          <Link href="/dashboard/productos" className="block p-2 hover:bg-gray-400 rounded">
+            Vertical
+          </Link>
+            </li>
+
+            <li>
+          <Link href="/dashboard/productos" className="block p-2 hover:bg-gray-400 rounded">
+            Horizontal
+          </Link>
+            </li>
+              <li className="text-neutral-600 font-light text-xs">Temas</li>
+            <li>
+          <Link href="/dashboard/productos" className="block p-2 hover:bg-gray-400 rounded">
+            Version Light
+          </Link>
+            </li>
+
+            <li>
+          <Link href="/dashboard/productos" className="block p-2 hover:bg-gray-400 rounded">
+            Version Dark
+          </Link>
+            </li>
       </ul>
     </aside>
   );

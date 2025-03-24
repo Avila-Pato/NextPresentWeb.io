@@ -1,5 +1,6 @@
 // app/layout.tsx
 import { ClerkProvider } from '@clerk/nextjs';
+import {  neobrutalism } from '@clerk/themes'
 import type { Metadata } from 'next';
 import './globals.css';
 
@@ -14,9 +15,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider 
+    appearance={{
+      baseTheme: neobrutalism,
+    }}>
       <html lang="en">
-        <body className="h-screen flex flex-col bg-gray-100">
+        <body >
           {children}
         </body>
       </html>
