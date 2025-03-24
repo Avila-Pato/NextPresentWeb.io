@@ -3,7 +3,6 @@
 
 // export async function GET() {
     
-//   // const apiKey = 'AIzaSyB2WSctMMEdQ__eIANqI3jFMtSrMwRlILM'; 
 //   // // const url = `env`;
 
 //   try {
