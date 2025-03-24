@@ -1,0 +1,20 @@
+import { NextResponse } from 'next/server';
+import axios from 'axios';
+
+export async function GET() {
+    
+  const apiKey = 'AIzaSyB2WSctMMEdQ__eIANqI3jFMtSrMwRlILM'; 
+  const url = `https://www.googleapis.com/books/v1/volumes?q=search+terms&key=${apiKey}`;
+
+  try {
+    const response = await axios.get(url);
+    const books = response.data.items || [];
+    return NextResponse.json(books);
+  } catch (error) {
+    console.error('Error al buscar libros:', error);
+    return NextResponse.json(
+      { error: 'Error al buscar libros' },
+      { status: 500 }
+    );
+  }
+}
