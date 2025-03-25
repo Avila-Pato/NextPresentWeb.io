@@ -238,3 +238,14 @@ h1[id]::before {
 } 
 
 */
+/* Fuebtes */
+
+@layer base {
+  :root {
+    --font-nunito-sans: 'Nunito Sans', sans-serif;
+  }
+}
+
+@theme {
+  --fonts-sans: "var(--font-nunito-sans)";
+}
