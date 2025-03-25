@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { UserButton, useUser } from "@clerk/nextjs";
-import { Search, Bell, HelpCircle, ShoppingCart, Menu, X,  MailPlus } from "lucide-react";
+import { Bell, HelpCircle, MailPlus, Menu, X } from "lucide-react";
 import { useNavbarStore } from "@/store/navBarStore";
 
 const Navbar = () => {
@@ -11,9 +11,7 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setSticky(window.scrollY > 30);
-    };
+    const handleScroll = () => setSticky(window.scrollY > 30);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [setSticky]);
@@ -48,40 +46,58 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Navegación desktop */}
-          <div className="hidden md:flex items-center gap-6">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
-              <input
-                type="text"
-                placeholder="Buscar..."
-                className="bg-[#2a275a] rounded-full pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 w-64"
-              />
-            </div>
-
-            <ul className="flex items-center gap-6 list-none">
-              <li>
-                <Link href="/help" className="flex items-center gap-1 hover:text-purple-300 transition-colors">
-                  <HelpCircle size={18} />
-                  <span>Ayuda</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/customize" className=" flex items-center gap-1 hover:text-purple-300 transition-colors">
-                < MailPlus size={18} />
-                  <span>Personalización</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Iconos de usuario */}
+          {/* Iconos de acción (derecha) */}
           <div className="flex items-center gap-4">
-            <button className="relative p-1 hover:bg-[#2a275a] rounded-full transition-colors">
-              <Bell size={20} />
-            </button>
+            {/* Grupo de iconos con tooltips */}
+            <div className="flex items-center gap-4">
+              {/* Ayuda */}
+              <div className="relative group">
+                <Link 
+                  href="/help" 
+                  className="p-1 hover:bg-[#2a275a] rounded-full transition-colors hidden md:flex"
+                  aria-label="Ayuda"
+                >
+                  <HelpCircle size={20} />
+                </Link>
+                <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-max px-2 py-1 bg-[#3a3775] text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                  Ayuda
+                  <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#3a3775] rotate-45"></div>
+                </div>
+              </div>
+              
+              {/* Personalización */}
+              <div className="relative group">
+                <Link 
+                  href="/customize" 
+                  className="p-1 hover:bg-[#2a275a] rounded-full transition-colors hidden md:flex"
+                  aria-label="Personalización"
+                >
+                  <MailPlus size={20} />
+                </Link>
+                <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-max px-2 py-1 bg-[#3a3775] text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                  Personalización
+                  <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#3a3775] rotate-45"></div>
+                </div>
+              </div>
+              
+              {/* Notificaciones */}
+              <div className="relative group">
+                <button 
+                  className="p-1 hover:bg-[#2a275a] rounded-full transition-colors relative"
+                  aria-label="Notificaciones"
+                >
+                  <Bell size={20} />
+                  <span className="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500"></span>
+                </button>
+                <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-max px-2 py-1 bg-[#3a3775] text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                  Notificaciones
+                  <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#3a3775] rotate-45"></div>
+                </div>
+              </div>
+            </div>
             
-            {isSignedIn ? (
+            {/* Avatar de usuario */}
+            {isSignedIn && (
               <div className="flex items-center gap-2">
                 <UserButton 
                   afterSignOutUrl="/"
@@ -92,32 +108,18 @@ const Navbar = () => {
                     }
                   }}
                 />
-                <span className="hidden md:inline text-sm">{user?.firstName}</span>
+                <span className="hidden md:inline text-sm">
+                  {user?.firstName || "Mi cuenta"}
+                </span>
               </div>
-            ) : (
-              <Link 
-                href="/sign-in" 
-                className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                Iniciar sesión
-              </Link>
             )}
           </div>
         </div>
 
         {/* Menú móvil */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-[#2a275a] rounded-lg mt-3 p-4 space-y-4">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
-              <input
-                type="text"
-                placeholder="Buscar..."
-                className="bg-[#333066] w-full rounded-full pl-10 pr-4 py-2 text-sm focus:outline-none"
-              />
-            </div>
-
-            <ul className="space-y-3">
+          <div className="md:hidden bg-[#2a275a] rounded-lg mt-3 p-4 space-y-3">
+            <ul className="space-y-2">
               <li>
                 <Link 
                   href="/help" 
@@ -130,18 +132,10 @@ const Navbar = () => {
               <li>
                 <Link 
                   href="/customize" 
-                  className="block px-3 py-2 hover:bg-[#333066] rounded-md transition-colors"
-                >
-                  Personalización
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/pricing" 
                   className="flex items-center gap-2 px-3 py-2 hover:bg-[#333066] rounded-md transition-colors"
                 >
-                  <ShoppingCart size={18} />
-                  Planes
+                  <MailPlus size={18} />
+                  Personalización
                 </Link>
               </li>
             </ul>
