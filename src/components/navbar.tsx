@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { UserButton, useUser } from "@clerk/nextjs";
-import { Search, Bell, HelpCircle, ShoppingCart, Menu, X } from "lucide-react";
+import { Search, Bell, HelpCircle, ShoppingCart, Menu, X,  MailPlus } from "lucide-react";
 import { useNavbarStore } from "@/store/navBarStore";
 
 const Navbar = () => {
@@ -67,14 +67,9 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/customize" className="hover:text-purple-300 transition-colors">
-                  Personalización
-                </Link>
-              </li>
-              <li>
-                <Link href="/pricing" className="flex items-center gap-1 hover:text-purple-300 transition-colors">
-                  <ShoppingCart size={18} />
-                  <span>Planes</span>
+                <Link href="/customize" className=" flex items-center gap-1 hover:text-purple-300 transition-colors">
+                < MailPlus size={18} />
+                  <span>Personalización</span>
                 </Link>
               </li>
             </ul>
