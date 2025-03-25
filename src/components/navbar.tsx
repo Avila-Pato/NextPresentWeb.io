@@ -109,7 +109,7 @@ const Navbar = () => {
                   }}
                 />
                 <span className="hidden md:inline text-sm">
-                  {user?.firstName || "Mi cuenta"}
+                  {user?.fullName || "Mi cuenta"}
                 </span>
               </div>
             )}
