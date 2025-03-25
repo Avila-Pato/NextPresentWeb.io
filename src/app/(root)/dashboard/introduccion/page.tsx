@@ -6,26 +6,26 @@ const IntroductionPage = () => {
             <h1 id="introduccion" className="text-3xl font-bold mb-6">Introducción</h1>
             <div className="text-gray-700 leading-relaxed mb-8">
                 <p className="mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis distinctio, sunt velit eveniet veniam deserunt suscipit inventore provident, accusantium quam quidem reiciendis tempore quas. Repellendus architecto doloribus sapiente facere, asperiores quisquam totam eos beatae accusantium atque consequatur minus adipisci accusamus quo modi, aliquam nam sunt voluptatem odit maiores vel dignissimos aperiam ducimus.
+                    En un mundo donde la organización y la productividad son clave, <strong>NotionCraft</strong> nace como una solución personalizada para distintas comunidades. A diferencia de las plantillas genéricas, <strong>NotionCraft</strong> ofrece espacios de trabajo diseñados específicamente para sectores como enfermería, turismo, educación, informática y medioambiente, entre otros.
                 </p>
                 <p className="mb-4">
-                    Impedit earum aperiam voluptatum tempora iste corrupti aspernatur eos vero excepturi. Magni ad dolores asperiores rem ipsam autem, fuga, totam quas nulla quibusdam fugiat cum perferendis reiciendis neque. Error inventore, numquam aliquam impedit ad a. Eveniet debitis libero omnis. Aliquid, voluptatum magnam. Sapiente, provident? Quam, rem natus facere laboriosam cumque fuga, commodi eligendi libero delectus molestiae ratione repellendus debitis quas facilis?
+                    Cada comunidad tiene necesidades únicas, y <strong>NotionCraft</strong> adapta Notion para que profesionales, estudiantes e investigadores puedan optimizar su flujo de trabajo de manera eficiente. Desde la gestión de pacientes en salud, hasta el seguimiento de proyectos en informática o la planificación de eventos turísticos, esta plataforma proporciona herramientas intuitivas y flexibles para cada sector.
                 </p>
                 <p className="mb-4">
-                    Ab, corporis dignissimos. Pariatur quisquam veritatis eaque, deleniti rem iste nemo, magni sunt minima odio optio praesentium eos. Nihil, repellendus a id quod doloribus similique itaque inventore! Non esse nobis quod necessitatibus a libero et, rem molestiae nisi natus odit impedit modi vero reprehenderit! Quam quaerat dolores consequatur reiciendis nihil doloribus enim corporis dicta, aperiam repellendus quia inventore?
+                    El objetivo de <strong>NotionCraft</strong> es hacer que la organización sea más atractiva, accesible y funcional, permitiendo a los usuarios maximizar su productividad sin perder la personalización que cada disciplina necesita. Con interfaces intuitivas y estructuras adaptadas a cada necesidad, esta herramienta busca revolucionar la manera en que diferentes comunidades gestionan su información y colaboran en proyectos.
                 </p>
             </div>
 
-            <h2 id="produccion" className="text-2xl font-bold mb-4 mt-8">How it works?</h2>
+            <h2 id="como-funciona" className="text-2xl font-bold mb-4 mt-8">¿Cómo funciona?</h2>
             <div className="text-gray-700 leading-relaxed">
                 <p className="mb-4">
-                    Itaque ab minus illum commodi amet laborum fugit cumque iusto repudiandae eos ipsam itaque mollitia beatae maiores perspiciatis rem nostrum animi inventore, neque exercitationem quam reiciendis cum consequuntur voluptatum. Ab inventore dolore aliquid suscipit dolores laborum accusamus exercitationem ipsam voluptates itaque delectus corrupti eveniet saepe sapiente cumque impedit, tenetur minima totam libero non hic aut unde magnam.
+                    <strong>NotionCraft</strong> se basa en la flexibilidad y personalización que ofrece Notion, pero llevándolo un paso más allá. Cada plantilla y sistema de organización ha sido diseñado específicamente para responder a las necesidades de su comunidad objetivo. 
                 </p>
                 <p className="mb-4">
-                    Fugiat doloremque reprehenderit sint quaerat ducimus amet voluptatem quis est, velit nihil quo itaque totam tempora neque ab aut eos incidunt! Dicta laboriosam soluta, maiores qui sint doloremque ipsa repudiandae dolores eligendi voluptates delectus? Quae voluptas laudantium similique tempora, natus quaerat, ducimus odit consequatur neque quisquam, nisi atque aperiam in illo numquam perferendis ea illum ratione officiis porro cumque repellendus iusto.
+                    La plataforma permite a los usuarios acceder a espacios de trabajo estructurados con bases de datos interactivas, calendarios, tableros Kanban y documentos colaborativos, todo integrado en un mismo entorno. 
                 </p>
                 <p className="mb-4">
-                    Porro quas culpa provident ad assumenda eveniet laudantium odio error, labore maxime minima cumque modi et suscipit? Numquam, ex, temporibus iure repudiandae tenetur asperiores architecto dolores tempora inventore voluptatem animi facilis molestias eligendi quae corporis! Facere aliquam dolores quisquam explicabo voluptatum porro? Dolorem recusandae quis dignissimos nobis eos aspernatur veniam earum minus a adipisci.
+                    Además, <strong>NotionCraft</strong> fomenta la comunidad y el aprendizaje, proporcionando guías y recursos que ayudan a cada usuario a sacar el máximo provecho de su espacio de trabajo digital.
                 </p>
             </div>
         </section>

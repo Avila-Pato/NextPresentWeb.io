@@ -59,7 +59,7 @@ const Navbar = () => {
                 >
                   <HelpCircle size={20} />
                 </Link>
-                <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-max px-2 py-1 bg-[#3a3775] text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                <div className="absolute left-1/2 -translate-x-1/2 mt-5 w-max px-2 py-1 bg-[#3a3775] text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
                   Ayuda
                   <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#3a3775] rotate-45"></div>
                 </div>
@@ -74,7 +74,7 @@ const Navbar = () => {
                 >
                   <MailPlus size={20} />
                 </Link>
-                <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-max px-2 py-1 bg-[#3a3775] text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                <div className="absolute left-1/2 -translate-x-1/2 mt-5 w-max px-2 py-1 bg-[#3a3775] text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
                   Personalización
                   <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#3a3775] rotate-45"></div>
                 </div>
@@ -89,7 +89,7 @@ const Navbar = () => {
                   <Bell size={20} />
                   <span className="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500"></span>
                 </button>
-                <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-max px-2 py-1 bg-[#3a3775] text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                <div className="absolute left-1/2 -translate-x-1/2 mt-5 w-max px-2 py-1 bg-[#3a3775] text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
                   Notificaciones
                   <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#3a3775] rotate-45"></div>
                 </div>

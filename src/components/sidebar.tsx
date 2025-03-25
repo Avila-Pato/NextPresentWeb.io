@@ -51,7 +51,7 @@ const Sidebar = ({ collapsed, onToggleCollapse }: SidebarProps) => {
           </Link>
 
           {collapsed && (
-            <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-gray-700 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
+            <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-[#3a3775]  text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
               Dashboard
               <div className="absolute right-full top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-700 rotate-45"></div>
             </div>
@@ -69,7 +69,7 @@ const Sidebar = ({ collapsed, onToggleCollapse }: SidebarProps) => {
             {!collapsed && "Introducción"}
           </Link>
           {collapsed && (
-            <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-gray-700 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
+            <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-[#3a3775] text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
               Introducción
               <div className="absolute right-full top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-700 rotate-45"></div>
             </div>
@@ -87,7 +87,7 @@ const Sidebar = ({ collapsed, onToggleCollapse }: SidebarProps) => {
             {!collapsed && "Configuración"}
           </Link>
           {collapsed && (
-            <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-gray-700 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
+            <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-[#3a3775]  text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
               Configuración
               <div className="absolute right-full top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-700 rotate-45"></div>
             </div>
@@ -107,7 +107,7 @@ const Sidebar = ({ collapsed, onToggleCollapse }: SidebarProps) => {
             {!collapsed && "Vertical"}
           </Link>
           {collapsed && (
-            <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-gray-700 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
+            <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-[#3a3775] text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
               Vertical
               <div className="absolute right-full top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-700 rotate-45"></div>
             </div>
@@ -125,7 +125,7 @@ const Sidebar = ({ collapsed, onToggleCollapse }: SidebarProps) => {
             {!collapsed && "Horizontal"}
           </Link>
           {collapsed && (
-            <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-gray-700 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
+            <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-[#3a3775]  text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
               Horizontal
               <div className="absolute right-full top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-700 rotate-45"></div>
             </div>
@@ -145,7 +145,7 @@ const Sidebar = ({ collapsed, onToggleCollapse }: SidebarProps) => {
             {!collapsed && "Tema Claro"}
           </Link>
           {collapsed && (
-            <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-gray-700 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
+            <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-[#3a3775]  text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
               Tema Claro
               <div className="absolute right-full top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-700 rotate-45"></div>
             </div>
@@ -163,7 +163,7 @@ const Sidebar = ({ collapsed, onToggleCollapse }: SidebarProps) => {
             {!collapsed && "Tema Oscuro"}
           </Link>
           {collapsed && (
-            <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-gray-700 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
+            <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-[#3a3775]  text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
               Tema Oscuro
               <div className="absolute right-full top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-700 rotate-45"></div>
             </div>
