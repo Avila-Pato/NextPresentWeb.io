@@ -28,7 +28,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="text-lg font-bold">
-          <Link href="/dashboard">Minible</Link>
+          <Link href="/dashboard">NotionCraft</Link>
         </div>
 
         {/* Opciones y usuario */}

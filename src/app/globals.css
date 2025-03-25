@@ -240,12 +240,39 @@ h1[id]::before {
 */
 /* Fuebtes */
 
-@layer base {
-  :root {
-    --font-nunito-sans: 'Nunito Sans', sans-serif;
-  }
+
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
 }
 
-@theme {
-  --fonts-sans: "var(--font-nunito-sans)";
+/* Resaltado de sección activa */
+.active-section {
+  @apply bg-gray-100;
+  box-shadow: 0 0 0 2px rgba(209, 213, 219, 0.5);
+}
+
+/* Resaltado temporal al hacer clic */
+.highlight-section {
+  @apply bg-blue-50;
+  animation: pulse-highlight 2s ease-out;
+}
+
+@keyframes pulse-highlight {
+  0% { background-color: rgba(219, 234, 254, 1); }
+  100% { background-color: transparent; }
+}
+
+/* Estilos para el contenido */
+.prose {
+  line-height: 1.6;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose ul {
+  @apply list-disc pl-6 mb-4;
 }

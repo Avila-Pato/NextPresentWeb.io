@@ -1,29 +1,56 @@
+"use client";
+
 import Navbar from '@/components/navbar';
 import Sidebar from '@/components/sidebar';
-import TableOfContents  from '@/components/TableOfContents';
-import React, { ReactNode } from 'react';
+import TableOfContents from '@/components/TableOfContents';
+import React, { ReactNode, useState } from 'react';
 
-const Layout = ({ children }: { children: ReactNode }) => {
+const DashboardLayout = ({ children }: { children: ReactNode }) => {
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [tocCollapsed, setTocCollapsed] = useState(false);
+
   return (
-    <div className="flex flex-col pt-20 ">
-      {/* Navbar arriba ocupando todo el ancho */}
+    <div className="flex flex-col min-h-screen bg-gray-50">
+      {/* Navbar fijo en la parte superior */}
       <Navbar />
       
-      {/* Contenedor principal (Sidebar + Contenido) */}
-      <div className="flex flex-1 ">
-        {/* Sidebar FIJ0 */}
-        <aside className="fixed w-48 h-[calc(100vh-4rem)] top-16 left-0 bg-[#e6e7ee] p-4 overflow-hidden">
-          <Sidebar />
+      {/* Contenedor principal */}
+      <div className="flex flex-1 pt-16">
+        {/* Sidebar fijo */}
+        <aside 
+          className={`fixed h-[calc(100vh-4rem)] top-16 left-0 bg-[#e6e7ee] overflow-y-auto transition-all duration-300 z-10 ${
+            sidebarCollapsed ? 'w-16' : 'w-52'
+          }`}
+        >
+          <Sidebar 
+            collapsed={sidebarCollapsed} 
+            onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)} 
+          />
         </aside>
 
-        {/* Contenido PRINCIPAL (con scroll) */}
-        <main className="flex-1 ml-52 p-4 bg-white shadow-md overflow-y-auto overflow-hidden">
-          {children}
+        {/* Contenido principal con margen dinámico */}
+        <main 
+          className={`flex-1 overflow-y-auto transition-all duration-300 ${
+            sidebarCollapsed ? 'ml-16' : 'ml-52'
+          } ${tocCollapsed ? 'mr-10' : 'mr-64'}`}
+        >
+          <div className="max-w-4xl mx-auto p-6">
+            {children}
+          </div>
         </main>
-        <TableOfContents /> 
+
+        {/* Tabla de contenidos flotante */}
+        <div className={`fixed right-0 top-16 h-[calc(100vh-4rem)] transition-all duration-300 ${
+          tocCollapsed ? 'w-10' : 'w-64'
+        }`}>
+          <TableOfContents 
+            collapsed={tocCollapsed} 
+            onToggleCollapse={() => setTocCollapsed(!tocCollapsed)} 
+          />
+        </div>
       </div>
     </div>
   );
 };
 
-export default Layout;
+export default DashboardLayout;
