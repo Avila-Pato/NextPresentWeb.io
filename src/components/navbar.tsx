@@ -42,7 +42,7 @@ const Navbar = () => {
             </button>
 
 
-            <Link href="/" className="flex items-center space-x-2">
+            <Link href="/dashboard" className="flex items-center space-x-2">
               <Image
                 src="/download.png"
                 width={20}
