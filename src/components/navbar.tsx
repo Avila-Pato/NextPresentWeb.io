@@ -7,7 +7,7 @@ import { Bell, HelpCircle, MailPlus, Menu, X } from "lucide-react";
 import { useNavbarStore } from "@/store/navBarStore";
 
 const Navbar = () => {
-  const { isSignedIn, user } = useUser();
+  const { isSignedIn} = useUser();
   const { isSticky, setSticky } = useNavbarStore();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -106,30 +106,21 @@ const Navbar = () => {
             </div>
 
             {/* Avatar de usuario */}
-            {isSignedIn && (
-              <div className="flex items-center gap-2">
-                <UserButton
-                  afterSignOutUrl="/"
-                  appearance={{
-                    elements: {
-                      avatarBox: "h-8 w-8",
-                      userButtonPopoverCard: "bg-[#222038] border border-[#3a3775]"
-                    }
-                  }}
-                />
-                <span className="hidden md:inline text-sm">
-                    {user?.imageUrl && (
-                    <Image
-                      src={user.imageUrl}
-                      alt="User Avatar"
-                      width={32}
-                      height={32}
-                      className="rounded-full"
-                    />
-                    )}
-                </span>
-              </div>
-            )}
+           {/* Avatar de usuario */}
+{isSignedIn && (
+  <div className="flex items-center gap-2">
+    <UserButton
+      afterSignOutUrl="/"
+      appearance={{
+        elements: {
+          avatarBox: "h-8 w-8",
+          userButtonPopoverCard: "bg-[#222038] border border-[#3a3775]"
+        }
+      }}
+    />
+  </div>
+)}
+
           </div>
         </div>
 
