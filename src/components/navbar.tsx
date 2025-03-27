@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { UserButton, useUser } from "@clerk/nextjs";
 import { Bell, HelpCircle, MailPlus, Menu, X } from "lucide-react";
 import { useNavbarStore } from "@/store/navBarStore";
@@ -22,67 +23,75 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isSticky 
-          ? "bg-[#222038] shadow-lg py-2" 
-          : "bg-[#333066] py-3"
-      } text-white`}
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isSticky
+        ? "bg-[#222038] shadow-lg py-2"
+        : "bg-[#333066] py-3"
+        } text-white`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo y menú móvil */}
           <div className="flex items-center gap-6">
-            <button 
+            <button
               className="md:hidden p-1"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Menú móvil"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
-            
-            <Link href="/dashboard" className="text-xl font-bold hover:opacity-80 transition-opacity">
-              NotionCraft
-            </Link>
-          </div>
 
+
+            <Link href="/" className="flex items-center space-x-2">
+              <Image
+                src="/download.png"
+                width={20}
+                height={20}
+                alt="icon"
+              />
+              <span>NotionCraft</span>
+            </Link>
+
+          </div>
           {/* Iconos de acción (derecha) */}
           <div className="flex items-center gap-4">
             {/* Grupo de iconos con tooltips */}
             <div className="flex items-center gap-4">
               {/* Ayuda */}
               <div className="relative group">
-                <Link 
-                  href="/help" 
+                <Link
+                  href="https://wa.me/56966372123"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-1 hover:bg-[#2a275a] rounded-full transition-colors hidden md:flex"
                   aria-label="Ayuda"
                 >
                   <HelpCircle size={20} />
                 </Link>
                 <div className="absolute left-1/2 -translate-x-1/2 mt-5 w-max px-2 py-1 bg-[#3a3775] text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                  Ayuda
+                  Ayuda ?
                   <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#3a3775] rotate-45"></div>
                 </div>
               </div>
-              
+
               {/* Personalización */}
               <div className="relative group">
-                <Link 
-                  href="/customize" 
+                <Link
+                   href="mailto:p.avilaf1998@gmail.com"
                   className="p-1 hover:bg-[#2a275a] rounded-full transition-colors hidden md:flex"
                   aria-label="Personalización"
                 >
                   <MailPlus size={20} />
                 </Link>
                 <div className="absolute left-1/2 -translate-x-1/2 mt-5 w-max px-2 py-1 bg-[#3a3775] text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                  Personalización
+                  Alguna Personalización?
                   <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#3a3775] rotate-45"></div>
                 </div>
               </div>
-              
+
               {/* Notificaciones */}
               <div className="relative group">
-                <button 
+                <button
                   className="p-1 hover:bg-[#2a275a] rounded-full transition-colors relative"
                   aria-label="Notificaciones"
                 >
@@ -95,11 +104,11 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Avatar de usuario */}
             {isSignedIn && (
               <div className="flex items-center gap-2">
-                <UserButton 
+                <UserButton
                   afterSignOutUrl="/"
                   appearance={{
                     elements: {
@@ -121,21 +130,23 @@ const Navbar = () => {
           <div className="md:hidden bg-[#2a275a] rounded-lg mt-3 p-4 space-y-3">
             <ul className="space-y-2">
               <li>
-                <Link 
-                  href="/help" 
+                <Link
+                   href="https://wa.me/56966372123"
+                   target="_blank"
+                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-3 py-2 hover:bg-[#333066] rounded-md transition-colors"
                 >
                   <HelpCircle size={18} />
-                  Ayuda
+                  Ayuda ?
                 </Link>
               </li>
               <li>
-                <Link 
-                  href="/customize" 
+                <Link
+                   href="mailto:p.avilaf1998@gmail.com"
                   className="flex items-center gap-2 px-3 py-2 hover:bg-[#333066] rounded-md transition-colors"
                 >
                   <MailPlus size={18} />
-                  Personalización
+                  Alguna Personalización ?
                 </Link>
               </li>
             </ul>

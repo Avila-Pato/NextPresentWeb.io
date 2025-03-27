@@ -28,13 +28,20 @@ const Sidebar = ({ collapsed, onToggleCollapse }: SidebarProps) => {
 
   return (
     <div className="h-full lg:p-4 flex flex-col overflow-visible ">
-      <button
-        onClick={onToggleCollapse}
-        className="self-end mb-2 p-1 rounded-full hover:bg-gray-300"
-        aria-label={collapsed ? "Expandir menú" : "Colapsar menú"}
-      >
-        {collapsed ? <Menu size={20} /> : <ChevronRight size={20} />}
-      </button>
+     <button
+  onClick={onToggleCollapse}
+  className={`mb-2 p-1 rounded-full hover:bg-gray-300 flex items-center transition-all duration-300 ${
+    collapsed ? "ml-1" : "self-end"
+  }`}
+  aria-label={collapsed ? "Expandir menú" : "Colapsar menú"}
+>
+  <span className={!collapsed ? "font-bold" : ""}>
+    {!collapsed ? "NotionCraft" : ""}
+  </span>
+
+  {collapsed ? <Menu size={20} /> : <ChevronRight size={20} />}
+</button>
+
 
       <ul className="space-y-2 flex-1">
         {!collapsed && <li className="text-neutral-600 font-light text-xs pl-2">Documentos</li>}
@@ -53,7 +60,8 @@ const Sidebar = ({ collapsed, onToggleCollapse }: SidebarProps) => {
           {collapsed && (
             <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-[#3a3775]  text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
               Dashboard
-              <div className="absolute right-full top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-700 rotate-45"></div>
+              <div className="absolute right-full top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-700 rotate-45">
+              </div>
             </div>
           )}
         </li>
