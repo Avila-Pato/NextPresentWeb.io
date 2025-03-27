@@ -11,7 +11,7 @@ const SetUpPage = () => {
         </p>
       </header>
 
-      <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-12">
+      <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-6">
         <div className="p-8">
           <div className="flex items-center mb-6">
             <div className="bg-blue-100 p-3 rounded-full mr-4">
@@ -67,7 +67,7 @@ const SetUpPage = () => {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8 mb-12">
+      <div className="grid md:grid-cols-2 gap-8 mb-3">
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="p-8">
             <div className="flex items-center mb-6">
