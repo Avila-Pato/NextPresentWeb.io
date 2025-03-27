@@ -31,10 +31,10 @@ function App() {
   // }
 
   return (
-    <div className="min-h-screen w-full flex flex-col justify-center  bg-[#2d2e47] text-gray-900 bg-hero">
+    <div className="min-h-screen w-full  flex flex-col justify-center  bg-[#2d2e47] text-gray-900 bg-hero">
       {/* Navbar */}
       {/* Main content */}
-      <main className="flex-grow flex flex-col md:flex-row translate-x-24   items-center justify-between text-center p-5">
+      <main className="flex-grow flex flex-col md:flex-row    items-center justify-between text-center p-5">
         {/* Contenido a la izquierda */}
         <div className="flex flex-col items-center md:items-start max-w-lg mx-auto text-white">
           <h6 className="text-blue-600 font-semibold ml-0 md:ml-32"> 😎 Simple way To Communicate</h6>
