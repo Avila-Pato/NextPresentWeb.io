@@ -118,7 +118,15 @@ const Navbar = () => {
                   }}
                 />
                 <span className="hidden md:inline text-sm">
-                  {user?.fullName || "Mi cuenta"}
+                    {user?.imageUrl && (
+                    <Image
+                      src={user.imageUrl}
+                      alt="User Avatar"
+                      width={32}
+                      height={32}
+                      className="rounded-full"
+                    />
+                    )}
                 </span>
               </div>
             )}
