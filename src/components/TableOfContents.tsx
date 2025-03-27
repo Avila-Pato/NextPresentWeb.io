@@ -123,7 +123,7 @@ const TableOfContents = ({ collapsed, onToggleCollapse }: TableOfContentsProps) 
 
       {/* Contenido cuando está expandido */}
       {!collapsed && (
-        <div className="flex-1 overflow-y-auto p-4">
+        <div className="flex-1  overflow-y-auto p-4">
           <h3 className="font-bold text-gray-700 mb-3">Tabla de Contenidos</h3>
           <ul className="space-y-2">
             {headings.map((heading) => (

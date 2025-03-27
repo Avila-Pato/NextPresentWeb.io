@@ -16,7 +16,9 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
         {/* Sidebar (siempre visible) */}
         <aside
           className={`fixed h-[calc(100vh-4rem)] top-16 left-0 bg-[#e6e7ee] overflow-visible transition-all duration-300 z-40 ${
-            sidebarCollapsed ? 'w-16' : 'w-52'
+            sidebarCollapsed
+            ? 'w-12 sm:w-14 md:w-16'  // Colapsado: más estrecho en móvil
+            : 'w-40 sm:w-48 md:w-52'   // Expandido: más ancho en móvil
           }`}
         >
           <Sidebar
@@ -32,7 +34,8 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
             ${tocCollapsed ? 'mr-0 lg:mr-10' : 'mr-0 lg:mr-64'}
           `}
         >
-          <div className="max-w-4xl mx-auto p-6">
+          {/* Ajustamos el ancho del contenedor interno */}
+          <div className={` ${tocCollapsed ? 'md:pr-0' : 'lg:pr-10'}`}>
             {children}
           </div>
         </main>

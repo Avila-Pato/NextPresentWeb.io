@@ -208,9 +208,9 @@
 /* tabla de contenido del lado derecho  */
 
 /* Ajustar el margen derecho del main para evitar solapamiento */
-main {
+/* main {
   margin-right: 20rem; /* Ajusta según el ancho de tu TableOfContents */
-}
+ 
 
 /* Estilos para la barra de contenidos */
 /* aside {

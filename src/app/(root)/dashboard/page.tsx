@@ -3,7 +3,7 @@ import React from 'react'
 
 const DashboardPage = () => {
   return (
-    <section className="w-full min-h-screen p-4">
+    <section className="w-full min-h-screen lg:p-4">
       <h1 className="text-2xl font-bold mb-6 text-center">Panel de Control</h1>
 
       <div className="max-w-4xl mx-auto ">

@@ -27,10 +27,10 @@ const Sidebar = ({ collapsed, onToggleCollapse }: SidebarProps) => {
   };
 
   return (
-    <div className="h-full lg:p-4 flex flex-col overflow-visible ">
+    <div className="h-full lg:p-4 flex flex-col overflow-visible  ">
      <button
   onClick={onToggleCollapse}
-  className={`mb-2 p-1 rounded-full hover:bg-gray-300 flex items-center transition-all duration-300 ${
+  className={`mb-2 p-1 rounded-full hover:bg-gray-300  flex items-center transition-all duration-300 ${
     collapsed ? "ml-1" : "self-end"
   }`}
   aria-label={collapsed ? "Expandir menú" : "Colapsar menú"}
@@ -43,7 +43,7 @@ const Sidebar = ({ collapsed, onToggleCollapse }: SidebarProps) => {
 </button>
 
 
-      <ul className="space-y-2 flex-1">
+      <ul className="space-y-2 flex-1 ">
         {!collapsed && <li className="text-neutral-600 font-light text-xs pl-2">Documentos</li>}
 
         {/* Dashboard */}
