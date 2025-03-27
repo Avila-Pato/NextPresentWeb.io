@@ -37,7 +37,7 @@ function App() {
       <main className="flex-grow flex flex-col md:flex-row    items-center justify-between text-center p-5">
         {/* Contenido a la izquierda */}
         <div className="flex flex-col items-center md:items-start max-w-lg mx-auto text-white">
-          <h6 className="text-blue-600 font-semibold ml-0 md:ml-32"> 😎 Simple way To Communicate</h6>
+          <h6 className="text-blue-600 font-semibold ml-0 md:ml-32"> 😎 Comunicate de una manera mas simple</h6>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mt-2">
             Gestiona de forma rápida y sencilla
           </h1>
