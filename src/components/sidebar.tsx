@@ -112,11 +112,11 @@ const Sidebar = ({ collapsed, onToggleCollapse }: SidebarProps) => {
               }`}
           >
             <PanelRightOpen className={collapsed ? "" : "mr-2"} size={20} />
-            {!collapsed && "Vertical"}
+            {!collapsed && "Barra auxiliar"}
           </Link>
           {collapsed && (
             <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-[#3a3775] text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
-              Vertical
+              Barra auxiliar
               <div className="absolute right-full top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-700 rotate-45"></div>
             </div>
           )}
@@ -130,11 +130,11 @@ const Sidebar = ({ collapsed, onToggleCollapse }: SidebarProps) => {
               }`}
           >
             <PanelBottomOpen className={collapsed ? "" : "mr-2"} size={20} />
-            {!collapsed && "Horizontal"}
+            {!collapsed && "Barra lateral"}
           </Link>
           {collapsed && (
             <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-2 py-1 bg-[#3a3775]  text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
-              Horizontal
+              Barra lateral
               <div className="absolute right-full top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-700 rotate-45"></div>
             </div>
           )}

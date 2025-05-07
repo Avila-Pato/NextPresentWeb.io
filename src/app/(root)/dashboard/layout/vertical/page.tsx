@@ -2,7 +2,9 @@ import React from 'react'
 
 const VerticalPage = () => {
   return (
-    <div>VerticalPage</div>
+    <div>
+      <h1>Vertical menu configuration</h1>
+    </div>
   )
 }
 
