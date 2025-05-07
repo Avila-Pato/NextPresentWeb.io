@@ -6,8 +6,8 @@ import {
   LayoutDashboard,
   PanelRightOpen,
   PanelBottomOpen,
-  Moon,
-  Sun,
+  // Moon,
+  // Sun,
   ChevronRight,
   Menu
 } from 'lucide-react';
@@ -143,7 +143,7 @@ const Sidebar = ({ collapsed, onToggleCollapse }: SidebarProps) => {
         {!collapsed && <li className="text-neutral-600 font-light text-xs pl-2 mt-4">Apariencia</li>}
 
         {/* Tema Claro */}
-        <li className="relative group">
+        {/* <li className="relative group">
           <Link
             href="/dashboard/theme/light"
             className={`flex items-center p-2 rounded hover:bg-gray-300 transition-colors ${isActive('/dashboard/theme/light') ? 'bg-gray-300 text-gray-800 font-medium' : 'text-gray-600'
@@ -158,10 +158,10 @@ const Sidebar = ({ collapsed, onToggleCollapse }: SidebarProps) => {
               <div className="absolute right-full top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-700 rotate-45"></div>
             </div>
           )}
-        </li>
+        </li> */}
 
         {/* Tema Oscuro */}
-        <li className="relative group">
+        {/* <li className="relative group">
           <Link
             href="/dashboard/theme/dark"
             className={`flex items-center p-2 rounded hover:bg-gray-300 transition-colors ${isActive('/dashboard/theme/dark') ? 'bg-gray-300 text-gray-800 font-medium' : 'text-gray-600'
@@ -176,7 +176,7 @@ const Sidebar = ({ collapsed, onToggleCollapse }: SidebarProps) => {
               <div className="absolute right-full top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-700 rotate-45"></div>
             </div>
           )}
-        </li>
+        </li> */}
       </ul>
     </div>
   );
