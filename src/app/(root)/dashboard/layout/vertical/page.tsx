@@ -24,9 +24,9 @@ const VerticalPage = () => {
           </main>
 
           {/* Barra Lateral */}
-          <div className="w-64 h-full bg-white border-l border-gray-200 p-4 flex flex-col">
+          <div className="w-64 h-full bg-white border-l border-gray-200 p-2 flex flex-col">
             {/* Botón para expandir o colapsar la barra lateral */}
-            <button className="p-2 hover:bg-gray-100 rounded m-2">
+            <button className="hover:bg-gray-100 rounded m-2">
               {/* Aquí se muestra un ícono dependiendo si está colapsado o expandido */}
             </button>
 
